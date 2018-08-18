@@ -43,3 +43,5 @@ sudo apt-get -y install gnuradio libvolk1-bin libusb-1.0-0 gr-iqbal qt5-default 
 # You need to run volk_profile for the user that is going to use this program.
 volk_profile
 cd ~
+
+sudo pip install -r requirements.txt
