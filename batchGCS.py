@@ -9,12 +9,14 @@ keyfile = "/home/pi/enterYourKeyfileName.json" #change to your keyfile name
 
 def upload_blob(fileList):
 
-  credentialsJson = keyfile
-  scopesList = ["https://www.googleapis.com/auth/storage"]
-  credentialsObj = ServiceAccountCredentials.from_json_keyfile_name(
-    credentialsJson,
-    scopes = scopesList
-)
+  #credentialsJson = keyfile
+  #scopesList = ["https://www.googleapis.com/auth/storage"]
+  #credentialsObj = ServiceAccountCredentials.from_json_keyfile_name(
+  #  credentialsJson,
+  #  scopes = scopesList
+  #)
+
+  credentials = GoogleCredentials.get_application_default()
 
   """Uploads a file to the bucket."""
   storage_client = storage.Client()
@@ -53,7 +55,7 @@ def main():
 
                 try:
 		  if len(fileList) > 0:
-                    uploadBlob(fileList)
+                    upload_blob(fileList)
                     for fileName in fileList:
                       filePath = dataDir + "/" + fileName
                       os.remove(filePath)
