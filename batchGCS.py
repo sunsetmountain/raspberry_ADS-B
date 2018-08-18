@@ -12,14 +12,13 @@ keyfile = "/home/pi/enterYourKeyfileName.json" #change to your keyfile name
 
 def upload_blob(fileList):
 
-  #credentialsJson = keyfile
-  #scopesList = ["https://www.googleapis.com/auth/storage"]
-  #credentialsObj = ServiceAccountCredentials.from_json_keyfile_name(
-  #  credentialsJson,
-  #  scopes = scopesList
-  #)
+  scopesList = ["https://www.googleapis.com/auth/storage"]
+  credentialsObj = ServiceAccountCredentials.from_json_keyfile_name(
+    keyfile,
+    scopes = scopesList
+  )
 
-  credentials = GoogleCredentials.get_application_default()
+  #credentials = GoogleCredentials.get_application_default()
 
   """Uploads a file to the bucket."""
   storage_client = storage.Client()
