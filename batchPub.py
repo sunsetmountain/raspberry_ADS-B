@@ -7,17 +7,17 @@ from tendo import singleton
 me = singleton.SingleInstance() # will sys.exit(-1) if another instance of this script is already running
 
 dataDir = "/home/pi/rawData"
+keyfile = "/home/pi/enterYourKeyfileName.json" #change to your keyfile name
 
 def publishBatch(msgList):
 
-  #credentialsJson = keyfile
-  #scopesList = ["https://www.googleapis.com/auth/storage"]
-  #credentialsObj = ServiceAccountCredentials.from_json_keyfile_name(
-  #  credentialsJson,
-  #  scopes = scopesList
-  #)
+  scopesList = ["https://www.googleapis.com/auth/pubsub"]
+  credentialsObj = ServiceAccountCredentials.from_json_keyfile_name(
+    keyfile,
+    scopes = scopesList
+  )
 
-  credentials = GoogleCredentials.get_application_default()
+  #credentials = GoogleCredentials.get_application_default()
 
   pubsubClient = pubsub.Client(
     project="[projectName]"
