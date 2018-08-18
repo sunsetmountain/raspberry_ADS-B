@@ -24,8 +24,10 @@ def upload_blob(fileList):
   """Uploads a file to the bucket."""
   storage_client = storage.Client()
   bucket = storage_client.get_bucket(bucket_name)
-    
+
+  numberOfFiles = 0
   for fileName in fileList:
+    numberOfFiles = numberOfFiles + 1
     destination_blob_name = fileName
     source_file_name = dataDir + "/" + fileName
       
@@ -35,7 +37,8 @@ def upload_blob(fileList):
     print('File {} uploaded to {}.'.format(
       source_file_name,
       destination_blob_name))
-          
+
+  print "Uploaded " + str(numberOfFiles) + " files"
   return
 
 
