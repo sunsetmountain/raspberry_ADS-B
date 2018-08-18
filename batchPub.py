@@ -2,6 +2,9 @@ import os
 import time
 from google.cloud import pubsub
 from oauth2client.service_account import ServiceAccountCredentials
+from tendo import singleton
+
+me = singleton.SingleInstance() # will sys.exit(-1) if another instance of this script is already running
 
 dataDir = "/home/pi/rawData"
 
