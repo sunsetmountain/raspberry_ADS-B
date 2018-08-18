@@ -33,28 +33,6 @@ def upload_blob(fileList):
           
   return
 
-def publishBatch(msgList):
-
-	credentialsJson = "/home/pi/[keyfile].json"
-	scopesList = ["https://www.googleapis.com/auth/pubsub"]
-	credentialsObj = ServiceAccountCredentials.from_json_keyfile_name(
-		credentialsJson,
-		scopes = scopesList
-	)
-
-	pubsubClient = pubsub.Client(
-		project="[projectName]"
-	)
-
-	topicName = "raw-adsb-data"
-	topicObj = pubsubClient.topic(topicName)
-        with topicObj.batch() as batchObj:
-                for eachItem in msgList:
-                        eachItem = eachItem.encode("utf-8")
-                        batchObj.publish(eachItem)
-
-	return
-
 
 def loadList(fileList):
         msgList = []
@@ -74,27 +52,22 @@ def main():
         	#print len(msgList)
 
                 try:
-                        if len(fileList) > 0:
-                                uploadBlob(fileList)
-                                for fileName in fileList:
-                                        filePath = dataDir + "/" + fileName
-                                        os.remove(filePath)
-                        #if len(msgList) > 0:
-                        #        publishBatch(msgList)
-                        #        for fileName in fileList:
-                        #                filePath = dataDir + "/" + fileName
-                        #                os.remove(filePath)
-                        else:
-                                print "No messages to send..."
-                        time.sleep(10)
+		  if len(fileList) > 0:
+                    uploadBlob(fileList)
+                    for fileName in fileList:
+                      filePath = dataDir + "/" + fileName
+                      os.remove(filePath)
+                  else:
+                    print "No messages to send..."
+                  time.sleep(10)
 
                 except KeyboardInterrupt:
-                        quit()
+                  quit()
                 
                 except Exception,e:
-                        print "Encountered error..."
-                        print e
-                        continue
+                  print "Encountered error..."
+                  print e
+                  continue
 
 
 if __name__ == "__main__":
