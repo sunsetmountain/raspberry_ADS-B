@@ -30,12 +30,6 @@ sudo ldconfig
 # Create /etc/modprobe.d/blacklist-rtl.conf without opening a text editor!
 sudo bash -c “echo ‘blacklist dvb_usb_rtl28xxu’ >/etc/modprobe.d/blacklist-rtl.conf”
 
-# Plug in your SDR dongle and then reboot your raspberry pi
-#sudo reboot
-#rtl_test -t
-
-# rtl_test may look like a failure, but what matters is it should find your device. If it does you should be all set.
-# Download GQRX. There is a prebuilt binary for Raspberry Pi 3.
 cd ~
 curl -SL https://github.com/csete/gqrx/releases/download/v2.9/gqrx-2.9-linux-armv6.tar.xz | tar xJv
 
@@ -50,3 +44,10 @@ sudo pip install -r requirements.txt
 # Install Google Cloud packages
 sudo pip install --upgrade google-cloud-storage
 sudo pip install --upgrade oauth2client
+
+# Plug in your SDR dongle and then reboot your raspberry pi
+#sudo reboot
+#rtl_test -t
+
+# rtl_test may look like a failure, but what matters is it should find your device. If it does you should be all set.
+# Download GQRX. There is a prebuilt binary for Raspberry Pi 3.
