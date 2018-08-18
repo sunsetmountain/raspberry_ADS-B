@@ -37,6 +37,14 @@ sudo apt-get -y install gnuradio libvolk1-bin libusb-1.0-0 gr-iqbal qt5-default 
 
 # You need to run volk_profile for the user that is going to use this program.
 volk_profile
+
+# Install dump1090 script
+cd ~
+git clone https://github.com/antirez/dump1090
+cd dump1090
+make
+
+# Change back to original directory to finish off the install
 cd ~
 cd raspberry_ADS-B
 sudo pip install -r requirements.txt
