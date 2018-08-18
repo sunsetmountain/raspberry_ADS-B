@@ -53,6 +53,10 @@ sudo pip install -r requirements.txt
 sudo pip install --upgrade google-cloud-storage
 sudo pip install --upgrade oauth2client
 
+# Create a data directory
+cd ~
+mkdir rawData
+
 # Plug in your SDR dongle and then reboot your raspberry pi
 #sudo reboot
 #rtl_test -t
