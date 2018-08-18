@@ -10,25 +10,27 @@ dataDir = "/home/pi/rawData"
 
 def publishBatch(msgList):
 
-	credentialsJson = "/home/pi/[keyfile].json"
-	scopesList = ["https://www.googleapis.com/auth/pubsub"]
-	credentialsObj = ServiceAccountCredentials.from_json_keyfile_name(
-		credentialsJson,
-		scopes = scopesList
-	)
+  #credentialsJson = keyfile
+  #scopesList = ["https://www.googleapis.com/auth/storage"]
+  #credentialsObj = ServiceAccountCredentials.from_json_keyfile_name(
+  #  credentialsJson,
+  #  scopes = scopesList
+  #)
 
-	pubsubClient = pubsub.Client(
-		project="[projectName]"
-	)
+  credentials = GoogleCredentials.get_application_default()
 
-	topicName = "raw-adsb-data"
-	topicObj = pubsubClient.topic(topicName)
-        with topicObj.batch() as batchObj:
-                for eachItem in msgList:
-                        eachItem = eachItem.encode("utf-8")
-                        batchObj.publish(eachItem)
+  pubsubClient = pubsub.Client(
+    project="[projectName]"
+  )
 
-	return
+  topicName = "raw-adsb-data"
+  topicObj = pubsubClient.topic(topicName)
+  with topicObj.batch() as batchObj:
+    for eachItem in msgList:
+      eachItem = eachItem.encode("utf-8")
+      batchObj.publish(eachItem)
+
+  return
 
 
 def loadList(fileList):
