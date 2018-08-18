@@ -17,7 +17,7 @@ def getLocation():
         resultVar = None
         while resultVar is None:
                 try:
-                        locationFile = "/home/pi/currentLocation.json"
+                        locationFile = "/home/pi/raspberry_ADS-B/currentLocation.json"
                         currentLocation = open(locationFile, "r").read()
                         locationObj = json.loads(currentLocation)
                         resultVar = True
