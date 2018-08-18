@@ -6,6 +6,9 @@ import serial
 import pynmea2
 import calendar
 from datetime import datetime
+from tendo import singleton
+
+me = singleton.SingleInstance() # will sys.exit(-1) if another instance of this script is already running
 
 
 def mkEpoch(inputDatestamp, inputTimestamp):
