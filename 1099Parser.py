@@ -6,6 +6,9 @@ import time
 import socket
 import datetime
 import calendar
+from tendo import singleton
+
+me = singleton.SingleInstance() # will sys.exit(-1) if another instance of this script is already running
 
 dataDir = "/home/pi/rawData"
 
