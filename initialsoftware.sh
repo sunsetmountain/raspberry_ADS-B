@@ -30,6 +30,7 @@ sudo ldconfig
 # Create /etc/modprobe.d/blacklist-rtl.conf without opening a text editor!
 sudo bash -c “echo ‘blacklist dvb_usb_rtl28xxu’ >/etc/modprobe.d/blacklist-rtl.conf”
 
+# Install GPRX prebuilt for Raspberry Pi 3 (latest link is always at http://gqrx.dk/download/gqrx-sdr-for-the-raspberry-pi)
 cd ~
 curl -SL https://github.com/csete/gqrx/releases/download/v2.9/gqrx-2.9-linux-armv6.tar.xz | tar xJv
 
@@ -57,9 +58,7 @@ sudo pip install --upgrade oauth2client
 cd ~
 mkdir rawData
 
-# Plug in your SDR dongle and then reboot your raspberry pi
-#sudo reboot
-#rtl_test -t
-
-# rtl_test may look like a failure, but what matters is it should find your device. If it does you should be all set.
-# Download GQRX. There is a prebuilt binary for Raspberry Pi 3.
+# Add startup commands to the end of .profile
+echo "/home/pi/dump1090/dump1090 --net &" >> /home/pi/.profile
+echo "python /home/pi/raspberry_ADS-B/1090Parser.py &" >> /home/pi/.profile
+echo "python /home/pi/raspberry_ADS-B/batchGCS.py &" >> /home/pi/.profile
