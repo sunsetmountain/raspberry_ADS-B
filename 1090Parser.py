@@ -28,7 +28,7 @@ def getLocation():
 
 
 def mkEpoch(inputDatestamp, inputTimestamp):
-        inputDatestamp = inputDatestamp.replace("/", "-")
+	inputDatestamp = inputDatestamp.replace("/", "-")
 	inputStr = inputDatestamp + " " + inputTimestamp
 
 	datetimeObj = datetime.datetime.strptime(inputStr, "%Y-%m-%d %H:%M:%S.%f")
