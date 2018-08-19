@@ -140,7 +140,7 @@ def main():
 				if len(line) == 22:
 
 					# add the current time to the row
-					if len(line[14]) > 2:
+					if len(line[14]) > 2: # latitude is not blank or zero
 						#entryCnt += 1
 						epochNow = calendar.timegm(time.gmtime())
 						line.append(ds)
