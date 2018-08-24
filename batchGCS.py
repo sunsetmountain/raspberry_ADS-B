@@ -55,26 +55,26 @@ def loadList(fileList):
 def main():
         while True:
           fileList = os.listdir(dataDir)
-        	#msgList = loadList(fileList)
-        	#print len(msgList)
+          #msgList = loadList(fileList)
+          #print len(msgList)
 
-                try:
-		  if len(fileList) > 0:
-                    upload_blob(fileList)
-                    for fileName in fileList:
-                      filePath = dataDir + "/" + fileName
-                      os.remove(filePath)
-                  else:
-                    print "No messages to send..."
-                  time.sleep(10)
+          try:
+	    if len(fileList) > 0:
+              upload_blob(fileList)
+              for fileName in fileList:
+                filePath = dataDir + "/" + fileName
+                os.remove(filePath)
+           else:
+             print "No messages to send..."
+           time.sleep(10)
 
-                except KeyboardInterrupt:
-                  quit()
+           except KeyboardInterrupt:
+             quit()
                 
-                except Exception,e:
-                  print "Encountered error..."
-                  print e
-                  continue
+           except Exception,e:
+             print "Encountered error..."
+             print e
+             continue
 
 
 if __name__ == "__main__":
