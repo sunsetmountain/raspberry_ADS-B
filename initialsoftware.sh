@@ -60,6 +60,6 @@ mkdir rawData
 
 # Add startup commands to the end of .profile
 echo "/home/pi/dump1090/dump1090 --net &" >> /home/pi/.profile
+echo "python /home/pi/raspberry_ADS-B/usbGPS.py &" >> /home/pi/.profile
 echo "python /home/pi/raspberry_ADS-B/1090Parser.py &" >> /home/pi/.profile
 echo "python /home/pi/raspberry_ADS-B/batchGCS.py &" >> /home/pi/.profile
-echo "python /home/pi/raspberry_ADS-B/usbGPS.py &" >> /home/pi/.profile
