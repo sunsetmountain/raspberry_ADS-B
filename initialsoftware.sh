@@ -59,6 +59,7 @@ cd ~
 mkdir rawData
 
 # Add startup commands to the end of .profile
+echo "# export GOOGLE_APPLICATION_CREDENTIALS='/home/pi/FILENAME.json'"
 echo "/home/pi/dump1090/dump1090 --net &" >> /home/pi/.profile
 echo "python /home/pi/raspberry_ADS-B/usbGPS.py &" >> /home/pi/.profile
 echo "python /home/pi/raspberry_ADS-B/1090Parser.py &" >> /home/pi/.profile
