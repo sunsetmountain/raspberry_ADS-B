@@ -37,7 +37,7 @@ def upload_blob(fileList):
       source_file_name,
       destination_blob_name))
 
-    print "Uploaded " + str(numberOfFiles) + " files"
+  print "Uploaded " + str(numberOfFiles) + " files"
   return
 
 
