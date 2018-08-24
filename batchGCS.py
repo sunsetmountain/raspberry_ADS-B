@@ -44,10 +44,10 @@ def upload_blob(fileList):
 def loadList(fileList):
         msgList = []
         for fileName in fileList:
-                filePath = dataDir + "/" + fileName
-		with open(filePath) as fileObj:
-                        fileContents = fileObj.read()
-                        msgList.append(fileContents)
+          filePath = dataDir + "/" + fileName
+	  with open(filePath) as fileObj:
+            fileContents = fileObj.read()
+            msgList.append(fileContents)
 
         return msgList
 
