@@ -37,7 +37,7 @@ def upload_blob(fileList):
       source_file_name,
       destination_blob_name))
 
-  print "Uploaded " + str(numberOfFiles) + " files"
+    print "Uploaded " + str(numberOfFiles) + " files"
   return
 
 
@@ -64,9 +64,9 @@ def main():
               for fileName in fileList:
                 filePath = dataDir + "/" + fileName
                 os.remove(filePath)
-           else:
-             print "No messages to send..."
-           time.sleep(10)
+            else:
+              print "No messages to send..."
+            time.sleep(10)
 
            except KeyboardInterrupt:
              quit()
