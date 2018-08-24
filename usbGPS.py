@@ -54,7 +54,7 @@ def readSerial():
                 outputObj["signalStatus"] = signalStatus
                 outputObj["rxEpoch"] = mkEpoch(str(dateStamp), str(msgObj.timestamp))
 
-                dataDir = "/home/pi"
+                dataDir = "/home/pi/raspberry_ADS-B"
                 filePath = dataDir + "/" + "currentLocation.json"
                 open(filePath, "wb").write(json.dumps(outputObj))
 
