@@ -6,7 +6,7 @@ cd ~
 # Make sure everything is up-to-date and then install core packages
 sudo apt-get update
 sudo apt-get -y install git cmake python-pip python-dev build-essential libusb-1.0-0.dev
-sudo pip install --upgrade pip pyasn1
+sudo pip install --upgrade pip pyasn1 pynmea2
 
 # Git rtl-sdr
 git clone https://git.osmocom.org/rtl-sdr
