@@ -1,6 +1,6 @@
 # raspberry_ADS-B
 
-With a fresh install of Noobs (after Wifi setup, updates, etc.), open up a terminal...
+With a fresh install of Noobs (after Wifi setup, updates, etc.), plug in a ADS-B USB receiver, open up a terminal...
 
 ```
 cd ~
