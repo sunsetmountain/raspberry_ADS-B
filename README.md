@@ -11,3 +11,9 @@ cd raspberry_ADS-B
 chmod +x initialsoftware.sh
 ./initialsoftware.sh
 ```
+
+Update the JSON keyfile name in batchGCS.py
+
+Test dump1090
+
+/home/pi/dump1090/dump1090 --net --interactive
