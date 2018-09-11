@@ -1,4 +1,5 @@
 # Install all of the core software needed to make use of a SDR (software defined radio)
+# Based on instructions at https://www.rtl-sdr.com/video-tutorial-installing-gqrx-and-rtl-sdr-on-a-raspberry-pi/
 
 # Start at the beginning by going home.
 cd ~
