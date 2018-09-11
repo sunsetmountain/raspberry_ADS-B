@@ -15,5 +15,8 @@ chmod +x initialsoftware.sh
 Update the JSON keyfile name in batchGCS.py
 
 Test dump1090
-
+```
 /home/pi/dump1090/dump1090 --net --interactive
+```
+
+If you experience an error, make sure that the ADS-B USB receiver is inserted and reboot the Raspberry Pi.
