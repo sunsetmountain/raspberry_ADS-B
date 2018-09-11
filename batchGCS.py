@@ -68,13 +68,13 @@ def main():
               print "No messages to send..."
             time.sleep(10)
 
-           except KeyboardInterrupt:
-             quit()
+          except KeyboardInterrupt:
+            quit()
 
-           except Exception,e:
-             print "Encountered error..."
-             print e
-             continue
+          except Exception,e:
+            print "Encountered error..."
+            print e
+            continue
 
 
 if __name__ == "__main__":
