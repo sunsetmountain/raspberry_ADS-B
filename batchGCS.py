@@ -70,7 +70,7 @@ def main():
 
            except KeyboardInterrupt:
              quit()
-                
+
            except Exception,e:
              print "Encountered error..."
              print e
